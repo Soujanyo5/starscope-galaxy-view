@@ -41,44 +41,44 @@ export const Services = () => {
 
   const services = [
     {
-      title: "Guided Stargazing Tours",
-      description: "Expert-led journeys through the cosmos with professional telescopes",
+      title: "Neural Stargazing Matrix",
+      description: "AI-enhanced cosmic navigation with quantum telescope arrays",
       icon: Telescope,
       splineUrl: "https://my.spline.design/3dstars-h2Cz4m7nX7YLKQbqKI7ESeBI/",
-      price: "From $89",
-      features: ["Professional Guide", "High-end Telescopes", "Dark Sky Location"]
+      price: "From $149",
+      features: ["Neural Interface", "Quantum Telescopes", "Dark Space Matrix"]
     },
     {
-      title: "Astrophotography Sessions",
-      description: "Capture stunning celestial images with professional equipment",
+      title: "Astro-Photography Protocol",
+      description: "Capture stellar phenomena with advanced imaging algorithms",
       icon: Camera,
       splineUrl: "https://my.spline.design/jameswebb-KGKuwyc50148SIrPZaDv2dZX/",
-      price: "From $149",
-      features: ["Camera Equipment", "Expert Instruction", "Image Processing"]
+      price: "From $249",
+      features: ["AI Enhancement", "Neural Processing", "Quantum Imaging"]
     },
     {
-      title: "Live Celestial Streams",
-      description: "Real-time broadcasts of astronomical events and observations",
+      title: "Live Neural Streams",
+      description: "Real-time cosmic data transmission via neural networks",
       icon: Tv,
       splineUrl: "https://my.spline.design/lostorbinthemountains-Oespc2pmJdsVEPPvQXvPDIKG/",
-      price: "Free",
-      features: ["HD Streaming", "Expert Commentary", "Interactive Chat"]
+      price: "FREE ACCESS",
+      features: ["Neural Feed", "AI Commentary", "Quantum Chat"]
     },
     {
-      title: "Educational Workshops",
-      description: "Learn astronomy fundamentals and telescope operation",
+      title: "Tech Laboratory Training",
+      description: "Advanced stellar technology and AI systems mastery",
       icon: GraduationCap,
       splineUrl: "https://my.spline.design/booksleeveexperiment-CtQCPhm2JzM0JhjhC69wNy1x/",
-      price: "From $59",
-      features: ["Hands-on Learning", "Certification", "Group Sessions"]
+      price: "From $99",
+      features: ["Neural Learning", "AI Certification", "Tech Protocols"]
     },
     {
-      title: "Membership Plans",
-      description: "Exclusive access to all services with premium benefits",
+      title: "Elite Neural Access",
+      description: "Premium membership with full system access privileges",
       icon: Crown,
       splineUrl: "https://my.spline.design/worldplanet-dZgfDFu4KFD6X3WTymCpqnrj/",
-      price: "From $29/mo",
-      features: ["Unlimited Access", "Priority Booking", "Member Events"]
+      price: "From $49/mo",
+      features: ["Full Neural Access", "Priority Systems", "Elite Events"]
     }
   ];
 
@@ -91,10 +91,10 @@ export const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-space text-4xl lg:text-5xl font-bold mb-6">
-            <span className="gradient-text">Cosmic</span> Services
+            <span className="gradient-text">NEURAL</span> SYSTEMS
           </h2>
-          <p className="font-body text-xl text-foreground/80 max-w-2xl mx-auto">
-            From guided tours to professional astrophotography, explore our range of stellar experiences
+          <p className="font-space text-xl text-foreground/80 max-w-2xl mx-auto tracking-wider">
+            ADVANCED STELLAR TECHNOLOGY • AI-ENHANCED EXPERIENCES • QUANTUM PROTOCOLS
           </p>
         </div>
 
@@ -103,14 +103,14 @@ export const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="glass rounded-2xl p-6 hover:shadow-glow-cyan transition-all duration-500 group cursor-pointer"
+              className="relative overflow-hidden rounded-2xl border border-primary/20 group cursor-pointer"
               style={{
                 transform: "perspective(1000px)",
               }}
               onMouseEnter={(e) => {
                 gsap.to(e.currentTarget, {
-                  rotateY: 5,
-                  rotateX: 5,
+                  rotateY: 2,
+                  rotateX: 2,
                   scale: 1.02,
                   duration: 0.3,
                   ease: "power2.out"
@@ -126,45 +126,49 @@ export const Services = () => {
                 });
               }}
             >
-              {/* 3D Scene */}
-              <div className="mb-6 rounded-xl overflow-hidden">
+              {/* Background 3D Scene */}
+              <div className="absolute inset-0 z-0">
                 <SplineEmbed
                   src={service.splineUrl}
-                  className="w-full h-48 group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
                 />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-background/30" />
               </div>
 
-              {/* Content */}
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
+              {/* Floating Content */}
+              <div className="relative z-10 p-6 h-80 flex flex-col justify-between">
+                <div className="flex items-center justify-between mb-4">
                   <service.icon className="w-8 h-8 text-primary" />
                   <span className="font-space text-lg font-bold text-secondary">
                     {service.price}
                   </span>
                 </div>
 
-                <h3 className="font-space text-xl font-semibold text-foreground">
-                  {service.title}
-                </h3>
+                <div className="space-y-4">
+                  <h3 className="font-space text-xl font-semibold text-foreground">
+                    {service.title}
+                  </h3>
 
-                <p className="font-body text-foreground/70 text-sm">
-                  {service.description}
-                </p>
+                  <p className="font-space text-foreground/70 text-sm tracking-wide">
+                    {service.description}
+                  </p>
 
-                {/* Features */}
-                <ul className="space-y-2">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-foreground/60">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                  {/* Features */}
+                  <ul className="space-y-2">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-center text-sm text-foreground/60 font-space">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
 
-                <Button variant="glass" className="w-full group">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                  <Button variant="glass" className="w-full group font-space">
+                    ACCESS SYSTEM
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
               </div>
             </div>
           ))}

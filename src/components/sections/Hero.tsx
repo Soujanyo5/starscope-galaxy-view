@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Button } from '@/components/ui/button';
 import { SplineEmbed } from '@/components/SplineEmbed';
-import { Play, Calendar, ArrowRight, Telescope, Star } from 'lucide-react';
+import { Play, Calendar, ArrowRight, Telescope, Star, Zap } from 'lucide-react';
 
 export const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -48,7 +48,16 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background 3D Scene - Full Screen */}
+      <div className="absolute inset-0 z-0">
+        <SplineEmbed
+          src="https://my.spline.design/galaxy-AkOMEn755IKPBdpOQFsKJfJN/"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/40" />
+      </div>
       {/* Background Elements */}
       <div className="absolute inset-0">
         {/* Animated particles */}
@@ -70,72 +79,54 @@ export const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cosmic-purple/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-        {/* Left Content */}
-        <div ref={heroRef} className="text-center lg:text-left space-y-8">
+      <div className="container mx-auto px-6 relative z-20">
+        {/* Floating Content */}
+        <div ref={heroRef} className="text-center space-y-8 max-w-4xl mx-auto">
           <h1 
             ref={titleRef}
-            className="font-space text-5xl lg:text-7xl font-bold leading-tight"
+            className="font-space text-6xl lg:text-8xl font-bold leading-tight"
           >
-            <span className="gradient-text">Explore</span>
+            <span className="gradient-text">NEURAL</span>
             <br />
-            <span className="text-foreground">the Infinite</span>
+            <span className="text-foreground">STARSCOPE</span>
             <br />
-            <span className="gradient-text">Night</span>
+            <span className="gradient-text">SYSTEM</span>
           </h1>
           
           <p 
             ref={subtitleRef}
-            className="font-body text-xl lg:text-2xl text-foreground/80 max-w-lg"
+            className="font-space text-xl lg:text-2xl text-foreground/90 max-w-2xl mx-auto tracking-wider"
           >
-            Guided tours · Astrophotography · Celestial livestreams
+            QUANTUM TOURS • ASTRO-PHOTOGRAPHY • NEURAL STREAMS
           </p>
 
-          <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button variant="neon" size="lg" className="group">
-              <Telescope className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-              Start Tour
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button variant="neon" size="xl" className="group">
+              <Zap className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
+              INITIALIZE TOUR
+              <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button variant="glass" size="lg" className="group">
-              <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Live Event
+            <Button variant="glass" size="xl" className="group font-space">
+              <Play className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
+              LIVE NEURAL FEED
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
-            <div className="text-center">
-              <div className="font-space text-2xl font-bold text-primary">500+</div>
-              <div className="font-body text-sm text-foreground/60">Tours Guided</div>
+          {/* Enhanced Stats - Tech Style */}
+          <div className="grid grid-cols-3 gap-8 pt-12">
+            <div className="text-center glass rounded-xl p-4 border border-primary/20">
+              <div className="font-space text-3xl font-bold text-primary">500K+</div>
+              <div className="font-space text-xs text-foreground/60 tracking-widest">NEURAL SCANS</div>
             </div>
-            <div className="text-center">
-              <div className="font-space text-2xl font-bold text-secondary">50K+</div>
-              <div className="font-body text-sm text-foreground/60">Photos Taken</div>
+            <div className="text-center glass rounded-xl p-4 border border-secondary/20">
+              <div className="font-space text-3xl font-bold text-secondary">50M+</div>
+              <div className="font-space text-xs text-foreground/60 tracking-widest">ASTRO PIXELS</div>
             </div>
-            <div className="text-center">
-              <div className="font-space text-2xl font-bold text-accent">24/7</div>
-              <div className="font-body text-sm text-foreground/60">Live Streams</div>
+            <div className="text-center glass rounded-xl p-4 border border-accent/20">
+              <div className="font-space text-3xl font-bold text-accent">24/7</div>
+              <div className="font-space text-xs text-foreground/60 tracking-widest">QUANTUM SYNC</div>
             </div>
-          </div>
-        </div>
-
-        {/* Right 3D Scene */}
-        <div className="relative">
-          <div className="glass rounded-2xl p-4 hover:shadow-glow-cyan transition-all duration-500">
-            <SplineEmbed
-              src="https://my.spline.design/galaxy-AkOMEn755IKPBdpOQFsKJfJN/"
-              className="w-full h-96 lg:h-[500px]"
-            />
-          </div>
-          
-          {/* Floating UI elements */}
-          <div className="absolute -top-4 -right-4 glass rounded-lg p-3 animate-pulse">
-            <Calendar className="w-6 h-6 text-primary" />
-          </div>
-          <div className="absolute -bottom-4 -left-4 glass rounded-lg p-3 pulse-glow">
-            <Star className="w-6 h-6 text-secondary" />
           </div>
         </div>
       </div>

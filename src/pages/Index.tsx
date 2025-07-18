@@ -5,9 +5,12 @@ import { Hero } from '@/components/sections/Hero';
 import { Services } from '@/components/sections/Services';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/Footer';
+import { AIChatBot } from '@/components/AIChatBot';
+import { ChatBotTrigger } from '@/components/ChatBotTrigger';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     // Initialize smooth scrolling and other animations here
@@ -36,6 +39,13 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      
+      {/* AI ChatBot */}
+      <ChatBotTrigger onClick={() => setIsChatOpen(true)} />
+      <AIChatBot 
+        isOpen={isChatOpen} 
+        onClose={() => setIsChatOpen(false)} 
+      />
     </div>
   );
 };
