@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'space': ['Orbitron', 'monospace'],
+				'body': ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// StarScope custom colors
+				'neon-cyan': 'hsl(var(--neon-cyan))',
+				'electric-violet': 'hsl(var(--electric-violet))',
+				'cosmic-purple': 'hsl(var(--cosmic-purple))',
+				'deep-space': 'hsl(var(--deep-space))',
+				'space-blue': 'hsl(var(--space-blue))'
+			},
+			backgroundImage: {
+				'gradient-cosmic': 'var(--gradient-cosmic)',
+				'gradient-neon': 'var(--gradient-neon)',
+				'gradient-aurora': 'var(--gradient-aurora)',
+			},
+			boxShadow: {
+				'glow-cyan': 'var(--glow-cyan)',
+				'glow-violet': 'var(--glow-violet)',
+				'glow-purple': 'var(--glow-purple)',
+				'glass': '0 8px 32px hsla(0, 0%, 0%, 0.3)',
+			},
+			backdropBlur: {
+				'glass': '20px',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
